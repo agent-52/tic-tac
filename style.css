@@ -1,0 +1,56 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+
+.board{
+  display: flex;
+  color: white;
+  
+}
+.boardcontainer{
+  display: grid;
+  place-items: center;
+}
+
+.heading{
+  display: grid;
+  margin-bottom: 2rem;
+  place-items: center;
+
+}
+
+button{
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  font-size: x-large;
+  font-weight: bolder;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+
+.row1>div,.row2>div,.row3>div{
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  display: grid;
+  place-items: center;
+  font-size: 8rem;
+}
+.startcontainer{
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+.resultbox{
+  display: grid;
+  place-items: center;
+  font-size: x-large;
+  color: black;
+  margin-block: 1rem;
+}
