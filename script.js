@@ -28,7 +28,7 @@ function getRandomInt(min, max) {
 
 
 function getRandomMove(){
-  while(true){
+  for(let i = 0; i<40; i++){
     let i = getRandomInt(0, 8)
     let emptyCount = 0
     console.log(i)
@@ -48,22 +48,50 @@ function getRandomMove(){
 
 
 
+function emptyGameboard(){
+  const game = Game()
+  for(let i = 0; i<9; i++){
+    document.querySelector(`.a${i}`).textContent = null
+    
+  }
+  document.querySelector(".winner").textContent = ""
+
+  GameBoard.gameboard = [null, null, null, null, null, null, null, null, null]
+  console.log(GameBoard.gameboard)
+
+}
+
+document.querySelector(".clear").addEventListener("click", emptyGameboard)
+
+document.querySelector(".X").addEventListener("click", ()=>{
+  Player1.move = "X"
+  Player2.move = "O"
+})
+
+document.querySelector(".O").addEventListener("click", ()=>{
+  Player1.move = "O"
+  Player2.move = "X"
+})
+
+
 function generateArray(){
   
 
   const a0 = document.querySelector(".a0")
   a0.addEventListener("click", () =>{
 
-    a0.textContent = Player1.move
-    GameBoard.gameboard[0] = Player1.move;
-
-    getRandomMove()
+    if(!document.querySelector(`.a${0}`).textContent){
+      a0.textContent = Player1.move
+      GameBoard.gameboard[0] = Player1.move;
+      getRandomMove()
+    }
    
     const game = Game();
     console.log(game)
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
     
     
@@ -72,17 +100,20 @@ function generateArray(){
 
   const a1 = document.querySelector(".a1")
   a1.addEventListener("click", () =>{
-    a1.textContent = Player1.move
-    GameBoard.gameboard[1] = Player1.move
-   
-    getRandomMove()
-    
+    if(!document.querySelector(`.a${1}`).textContent){
+      a1.textContent = Player1.move
+      GameBoard.gameboard[1] = Player1.move
+     
+      getRandomMove()
+    }
+
 
     const game = Game();
     console.log(game)
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
     
 
@@ -90,10 +121,12 @@ function generateArray(){
 
   const a2 = document.querySelector(".a2")
   a2.addEventListener("click", () =>{
-    a2.textContent = Player1.move
-    GameBoard.gameboard[2] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${2}`).textContent){
+      a2.textContent = Player1.move
+      GameBoard.gameboard[2] = Player1.move
+     
+      getRandomMove()
+    }
     
 
     const game = Game();
@@ -101,6 +134,7 @@ function generateArray(){
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
     
 
@@ -108,16 +142,19 @@ function generateArray(){
 
   const a3 = document.querySelector(".a3")
   a3.addEventListener("click", () =>{
-    a3.textContent = Player1.move
-    GameBoard.gameboard[3] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${3}`).textContent){
+      a3.textContent = Player1.move
+      GameBoard.gameboard[3] = Player1.move
+     
+      getRandomMove()
+    }
     
     const game = Game();
     console.log(game)
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
    
 
@@ -125,16 +162,19 @@ function generateArray(){
 
   const a4 = document.querySelector(".a4")
   a4.addEventListener("click", () =>{
-    a4.textContent = Player1.move
-    GameBoard.gameboard[4] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${4}`).textContent){
+      a4.textContent = Player1.move
+      GameBoard.gameboard[4] = Player1.move
+     
+      getRandomMove()
+    }
 
     const game = Game();
     console.log(game)
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
     
 
@@ -142,10 +182,12 @@ function generateArray(){
 
   const a5 = document.querySelector(".a5")
   a5.addEventListener("click", () =>{
-    a5.textContent = Player1.move
-    GameBoard.gameboard[5] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${5}`).textContent){
+      a5.textContent = Player1.move
+      GameBoard.gameboard[5] = Player1.move
+     
+      getRandomMove()
+    }
     
 
     const game = Game();
@@ -153,6 +195,7 @@ function generateArray(){
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
    
 
@@ -160,10 +203,12 @@ function generateArray(){
 
   const a6 = document.querySelector(".a6")
   a6.addEventListener("click", () =>{
-    a6.textContent = Player1.move
-    GameBoard.gameboard[6] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${6}`).textContent){
+      a6.textContent = Player1.move
+      GameBoard.gameboard[6] = Player1.move
+     
+      getRandomMove()
+    }
     
 
     const game = Game();
@@ -171,6 +216,7 @@ function generateArray(){
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
   
 
@@ -178,10 +224,12 @@ function generateArray(){
 
   const a7 = document.querySelector(".a7")
   a7.addEventListener("click", () =>{
-    a7.textContent = Player1.move
-    GameBoard.gameboard[7] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${7}`).textContent){
+      a7.textContent = Player1.move
+      GameBoard.gameboard[7] = Player1.move
+     
+      getRandomMove()
+    }
     
 
     const game = Game();
@@ -189,6 +237,7 @@ function generateArray(){
     console.log(game.result)
     if(game.result){
       document.querySelector(".winner").textContent = game.result
+
     }
     
 
@@ -196,10 +245,12 @@ function generateArray(){
 
   const a8 = document.querySelector(".a8")
   a8.addEventListener("click", () =>{
-    a8.textContent = Player1.move
-    GameBoard.gameboard[8] = Player1.move
-    
-    getRandomMove()
+    if(!document.querySelector(`.a${8}`).textContent){
+      a8.textContent = Player1.move
+      GameBoard.gameboard[8] = Player1.move
+     
+      getRandomMove()
+    }
 
     const game = Game();
     console.log(game)
@@ -228,43 +279,55 @@ const Game = function(){
 
   if(array[0] == Player1.move && array[4] == Player1.move && array[8] == Player1.move){
     Player1Score++
-    result = "Player1 Wins"
+    result = "You Win"
   }else if(array[0] == Player1.move && array[1] == Player1.move && array[2] == Player1.move){
     Player1Score++
-    result = "Player1 Wins"
+    result = "You Win"
   }else if(array[0] == Player1.move && array[3] == Player1.move && array[6] == Player1.move){
     Player1Score++
-    result = "Player1 Wins"
+    result = "You Win"
   }else if(array[2] == Player1.move && array[5] == Player1.move && array[8] == Player1.move){
     Player1Score++
-    result = "Player1 Wins"
+    result = "You Win"
   }else if(array[6] == Player1.move && array[7] == Player1.move && array[8] == Player1.move){
     Player1Score++
-    result = "Player1 Wins"
+    result = "You Win"
   }else if(array[2] == Player1.move && array[4] == Player1.move && array[6] == Player1.move){
     Player1Score++
-    result = "Player1 Wins"
+    result = "You Win"
+  }else if(array[3] == Player1.move && array[4] == Player1.move && array[5] == Player1.move){
+    Player1Score++
+    result = "You Win"
+  }else if(array[1] == Player1.move && array[4] == Player1.move && array[7] == Player1.move){
+    Player1Score++
+    result = "You Win"
   }
 
 
   if(array[0] == Player2.move && array[4] == Player2.move && array[8] == Player2.move){
     Player2Score++
-    result = "Player2 Wins"
+    result = "Computer Wins"
   }else if(array[0] == Player2.move && array[1] == Player2.move && array[2] == Player2.move){
     Player2Score++
-    result = "Player2 Wins"
+    result = "Computer Wins"
   }else if(array[0] == Player2.move && array[3] == Player2.move && array[6] == Player2.move){
     Player2Score++
-    result = "Player2 Wins"
+    result = "Computer Wins"
   }else if(array[2] == Player2.move && array[5] == Player2.move && array[8] == Player2.move){
     Player2Score++
-    result = "Player2 Wins"
+    result = "Computer Wins"
   }else if(array[6] == Player2.move && array[7] == Player2.move && array[8] == Player2.move){
     Player2Score++
-    result = "Player2 Wins"
+    result = "Computer Wins"
   }else if(array[2] == Player2.move && array[4] == Player2.move && array[6] == Player2.move){
     Player2Score++
-    result = "Player2 Wins"
+    result = "Computer Wins"
+  }else if(array[3] == Player2.move && array[4] == Player2.move && array[5] == Player2.move){
+    Player2Score++
+    result = "Computer Wins"
+  }else if(array[1] == Player2.move && array[4] == Player2.move && array[7] == Player2.move){
+    Player2Score++
+    result = "Computer Wins"
   }
 
   return {result, Player1Score}

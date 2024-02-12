@@ -54,3 +54,8 @@ button{
   color: black;
   margin-block: 1rem;
 }
+
+.winner{
+  font-size: xx-large;
+  font-weight: bolder;
+}
